@@ -1,0 +1,59 @@
+{
+	"name": "dwhCountriesUntyped",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "crimestatsqldsdev_linkedService",
+			"type": "LinkedServiceReference"
+		},
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "alpha-2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "alpha-3",
+				"type": "nvarchar"
+			},
+			{
+				"name": "country-code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "iso_3166-2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "region",
+				"type": "nvarchar"
+			},
+			{
+				"name": "sub-region",
+				"type": "nvarchar"
+			},
+			{
+				"name": "intermediate-region",
+				"type": "nvarchar"
+			},
+			{
+				"name": "region-code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "sub-region-code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "intermediate-region-code",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[staging].[Countries_untyped]"
+		}
+	}
+}

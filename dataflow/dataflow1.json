@@ -1,0 +1,24 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Load_Countries",
+						"type": "DatasetReference"
+					},
+					"name": "LoadCountries",
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> LoadCountries"
+				}
+			],
+			"sinks": [
+				{
+					"name": "sink1",
+					"script": "LoadCountries sink() ~> sink1"
+				}
+			]
+		}
+	}
+}
