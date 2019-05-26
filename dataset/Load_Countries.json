@@ -1,0 +1,23 @@
+{
+	"name": "Load_Countries",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "crimestatstacdev",
+			"type": "LinkedServiceReference"
+		},
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "ISOcountries.csv",
+				"folderPath": "CrimeStat.Source.Countries/DEV/CrimeStat.Source.Countries",
+				"container": "crimestat-sourcefiles"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
