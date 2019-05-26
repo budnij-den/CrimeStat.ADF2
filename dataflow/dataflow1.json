@@ -10,13 +10,17 @@
 						"type": "DatasetReference"
 					},
 					"name": "LoadCountries",
-					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> LoadCountries"
+					"script": "source(output(\n\t\t\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> LoadCountries"
 				}
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference"
+					},
 					"name": "sink1",
-					"script": "LoadCountries sink() ~> sink1"
+					"script": "LoadCountries sink(input(\n\t\tname as string,\n\t\t{alpha-2} as string,\n\t\t{alpha-3} as string,\n\t\t{country-code} as string,\n\t\t{iso_3166-2} as string,\n\t\tregion as string,\n\t\t{sub-region} as string,\n\t\t{intermediate-region} as string,\n\t\t{region-code} as string,\n\t\t{sub-region-code} as string,\n\t\t{intermediate-region-code} as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'table',\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false) ~> sink1"
 				}
 			]
 		}
