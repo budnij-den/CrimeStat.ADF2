@@ -1,0 +1,18 @@
+{
+	"name": "dataflow2",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "stagingUNCrimeLoadToUntyped",
+						"type": "DatasetReference"
+					},
+					"name": "source1",
+					"script": "source(output(\n\t\tFileName as string,\n\t\tRegion as string,\n\t\tSubRegion as string,\n\t\tCountry as string,\n\t\tCount as string,\n\t\tYear as string,\n\t\tRate as string,\n\t\tsysETLrunId as integer,\n\t\tsysCreatedAt as timestamp,\n\t\tsysChangedAt as timestamp,\n\t\tsysCreatedBy as integer,\n\t\tsysChangedBy as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'table') ~> source1"
+				}
+			]
+		}
+	}
+}
