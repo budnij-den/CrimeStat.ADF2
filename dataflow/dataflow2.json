@@ -6,11 +6,11 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "stagingUNCrimeLoadToUntyped",
+						"referenceName": "UNCrimeBurglary",
 						"type": "DatasetReference"
 					},
-					"name": "source1",
-					"script": "source(output(\n\t\tFileName as string,\n\t\tRegion as string,\n\t\tSubRegion as string,\n\t\tCountry as string,\n\t\tCount as string,\n\t\tYear as string,\n\t\tRate as string,\n\t\tsysETLrunId as integer,\n\t\tsysCreatedAt as timestamp,\n\t\tsysChangedAt as timestamp,\n\t\tsysCreatedBy as integer,\n\t\tsysChangedBy as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'table') ~> source1"
+					"name": "extractUNCrimeBurglary",
+					"script": "source(output(\n\t\tProp_0 as string,\n\t\tProp_1 as string,\n\t\tProp_2 as string,\n\t\tProp_3 as string,\n\t\tProp_4 as string,\n\t\tProp_5 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> extractUNCrimeBurglary"
 				}
 			]
 		}
